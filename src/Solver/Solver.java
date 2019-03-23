@@ -5,8 +5,9 @@ import pencilNotes.PencilNotes;
 
 public class Solver {
     public Board solve(PencilNotes pn) {
-        for(int i = 0; i < 10; i++) {
+        for(int i = 0; i < 30; i++) {
             RCElim.run(pn);
+            HiddenSingles.run(pn);
         }
         return pn.getBoard();
     }
