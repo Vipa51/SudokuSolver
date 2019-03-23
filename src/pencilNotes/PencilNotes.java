@@ -2,6 +2,9 @@ package pencilNotes;
 
 import boards.Board;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PencilNotes {
     private Tile[][] notes = new Tile[9][9];
 
@@ -52,4 +55,15 @@ public class PencilNotes {
         return new Box(array);
     }
 
+    public Board getBoard() {
+        String[][] board = new String[9][9];
+
+        for(int i = 0; i < 9; i++) {
+            for(int j = 0; j < 9; j++) {
+                board[i][j] =  ""+getTile(i, j).getNumber();
+            }
+        }
+
+        return new Board(board);
+    }
 }
