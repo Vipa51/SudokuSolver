@@ -53,8 +53,16 @@ public class PencilNotes {
         return lines[i];
     }
 
+    public Line getLine(int i) {
+        return lines[i];
+    }
+
     public Column getColumn(int i, int j) {
-        return columns[j]
+        return columns[j];
+    }
+
+    public Column getColumn(int j) {
+        return columns[j];
     }
 
     public Box createBox(int i, int j) {
@@ -79,6 +87,10 @@ public class PencilNotes {
         int topLeftI = i-(i%3);
         int topLeftJ = j-(j%3);
         return boxes[topLeftI+topLeftJ/3];
+    }
+
+    public Box getBox(int i) {
+        return boxes[i];
     }
 
     public Board getBoard() {
