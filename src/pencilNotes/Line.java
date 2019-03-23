@@ -1,16 +1,7 @@
 package pencilNotes;
 
-public class Line {
-    private Tile[] line = new Tile[9];
-
+public class Line extends TileList {
     public Line(Tile[] array) {
-        for(int i=0; i<9; i++) {
-            line[i] = array[i];
-        }
+        super(array);
     }
-
-    public Tile getTile(int number) {
-        return line[number];
-    }
-
 }

@@ -1,16 +1,7 @@
 package pencilNotes;
 
-public class Column {
-    private Tile[] column = new Tile[9];
-
+public class Column extends TileList{
     public Column(Tile[] array) {
-        for(int i=0; i<9; i++) {
-            column[i] = array[i];
-        }
+        super(array);
     }
-
-    public Tile getTile(int number) {
-        return column[number];
-    }
-
 }

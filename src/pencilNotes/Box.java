@@ -1,16 +1,7 @@
 package pencilNotes;
 
-public class Box {
-    Tile[] box = new Tile[9];
-
+public class Box extends TileList {
     public Box(Tile[] array) {
-        for(int i=0; i<9; i++) {
-            box[i] = array[i];
-        }
+        super(array);
     }
-
-    public Tile getTile(int number) {
-        return box[number];
-    }
-
 }
