@@ -16,6 +16,7 @@ public class HiddenSingles {
             findLast(col);
         }
 
+        // Loop through boxes
         for(int i = 0; i < 9; i++) {
             Box box = pn.getBox(i);
             findLast(box);

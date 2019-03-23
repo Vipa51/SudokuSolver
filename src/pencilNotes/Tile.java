@@ -21,6 +21,16 @@ public class Tile {
         }
     }
 
+    public int getNumPossible() {
+        int count = 0;
+        for(int i = 0; i < 9; i++) {
+            if(possibleNums[i]) {
+                count++;
+            }
+        }
+        return count;
+    }
+
     public Boolean getPossible(int number) {
         if(possibleNums[number]) {
             return true;
@@ -47,6 +57,15 @@ public class Tile {
             }
         }
         return 0;
+    }
+
+    public boolean compare(Tile tile) {
+        for(int i = 0; i < 9; i++) {
+            if(possibleNums[i] != tile.getPossible(i)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public int getI() {

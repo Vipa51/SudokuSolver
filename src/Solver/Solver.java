@@ -8,6 +8,7 @@ public class Solver {
         for(int i = 0; i < 30; i++) {
             RCElim.run(pn);
             HiddenSingles.run(pn);
+            NakedPairs.run(pn);
         }
         return pn.getBoard();
     }
