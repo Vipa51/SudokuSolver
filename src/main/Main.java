@@ -17,8 +17,8 @@ public class Main {
     }
 
     private static void print(PencilNotes pn) {
-        for(int j = 0; j < 9; j++) {
-            for(int i = 0; i < 9; i++) {
+        for(int i = 0; i < 9; i++) {
+            for(int j = 0; j < 9; j++) {
                 int number = pn.getTile(i, j).getNumber();
                 if(number != 0) {
                     System.out.printf(number + " ");

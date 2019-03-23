@@ -34,7 +34,7 @@ public class Tile {
 
     public int getNumber() {
         int count = 0;
-        for(int i=0; i<0; i++) {
+        for(int i=0; i<9; i++) {
             if(possibleNums[i]) {
                 count++;
             }
