@@ -15,27 +15,27 @@ public class RCElim {
 
     private static void elimLines(Line line, Tile tile) {
         for(int n = 0; n < 9; n++) {
-            int number = line.getTile(n).getNumber();
-            if(number != 0) {
-                tile.crossOff(number);
+            Tile t = line.getTile(n);
+            if(t.getNumber() != 0 && tile.getJ() != t.getJ()) {
+                tile.crossOff(t.getNumber());
             }
         }
     }
 
     private static void elimCols(Column col, Tile tile) {
         for(int n = 0; n < 9; n++) {
-            int number = col.getTile(n).getNumber();
-            if(number != 0) {
-                tile.crossOff(number);
+            Tile t = col.getTile(n);
+            if(t.getNumber() != 0 && tile.getI() != t.getI()) {
+                tile.crossOff(t.getNumber());
             }
         }
     }
 
     private static void elimBoxes(Box box, Tile tile) {
         for(int n = 0; n < 9; n++) {
-            int number = box.getTile(n).getNumber();
-            if(number != 0) {
-                tile.crossOff(number);
+            Tile t = box.getTile(n);
+            if(t.getNumber() != 0 && tile.getJ() != t.getJ() && tile.getI() != t.getI()) {
+                tile.crossOff(t.getNumber());
             }
         }
     }
