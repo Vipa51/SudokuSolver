@@ -7,19 +7,19 @@ public class HiddenPairs {
     public static void run(PencilNotes pn) {
         // Loop through lines
         for(int i = 0; i < 9; i++) {
-            Line line = pn.getLine(i);
+            TileList line = pn.getLine(i);
             findDoubles(line);
         }
 
         // Loop through columns
         for(int i = 0; i < 9; i++) {
-            Column col = pn.getColumn(i);
+            TileList col = pn.getColumn(i);
             findDoubles(col);
         }
 
         // Loop through boxes
         for(int i = 0; i < 9; i++) {
-            Box box = pn.getBox(i);
+            TileList box = pn.getBox(i);
             findDoubles(box);
         }
     }

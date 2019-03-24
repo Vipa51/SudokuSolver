@@ -1,15 +1,11 @@
 package pencilNotes;
 
 import boards.Board;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class PencilNotes {
     private Tile[][] notes = new Tile[9][9];
-    private Line[] lines = new Line[9];
-    private Column[] columns = new Column[9];
-    private Box[] boxes = new Box[9];
+    private TileList[] lines = new TileList[9];
+    private TileList[] columns = new TileList[9];
+    private TileList[] boxes = new TileList[9];
 
     public PencilNotes(Board board) {
         for(int i=0; i<9; i++) {
@@ -23,7 +19,7 @@ public class PencilNotes {
             for(int j=0; j<9; j++) {
                 array[j] = notes[i][j];
             }
-            lines[i] = new Line(array);
+            lines[i] = new TileList(array);
         }
 
         for(int j=0; j<9; j++) {
@@ -31,7 +27,7 @@ public class PencilNotes {
             for(int i=0; i<9; i++) {
                 array[i] = notes[i][j];
             }
-            columns[j] = new Column(array);
+            columns[j] = new TileList(array);
         }
 
         boxes[0] = createBox(0, 0);
@@ -49,23 +45,23 @@ public class PencilNotes {
         return notes[i][j];
     }
 
-    public Line getLine(int i, int j) {
+    public TileList getLine(int i, int j) {
         return lines[i];
     }
 
-    public Line getLine(int i) {
+    public TileList getLine(int i) {
         return lines[i];
     }
 
-    public Column getColumn(int i, int j) {
+    public TileList getColumn(int i, int j) {
         return columns[j];
     }
 
-    public Column getColumn(int j) {
+    public TileList getColumn(int j) {
         return columns[j];
     }
 
-    public Box createBox(int i, int j) {
+    public TileList createBox(int i, int j) {
         Tile[] array = new Tile[9];
         int topLeftI = i-(i%3);
         int topLeftJ = j-(j%3);
@@ -80,16 +76,16 @@ public class PencilNotes {
         array[7] = notes[topLeftI+2][topLeftJ+1];
         array[8] = notes[topLeftI+2][topLeftJ+2];
 
-        return new Box(array);
+        return new TileList(array);
     }
 
-    public Box getBox(int i, int j) {
+    public TileList getBox(int i, int j) {
         int topLeftI = i-(i%3);
         int topLeftJ = j-(j%3);
         return boxes[topLeftI+topLeftJ/3];
     }
 
-    public Box getBox(int i) {
+    public TileList getBox(int i) {
         return boxes[i];
     }
 
