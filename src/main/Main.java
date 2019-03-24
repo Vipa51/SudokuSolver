@@ -9,6 +9,7 @@ public class Main {
 
     public static void main(String args[]) {
         Board board = new Board(BOARD_ID);
+
         PencilNotes pn = new PencilNotes(board);
 
         Solver solver = new Solver();

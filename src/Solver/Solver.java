@@ -9,6 +9,7 @@ public class Solver {
             RCElim.run(pn);
             HiddenSingles.run(pn);
             NakedPairs.run(pn);
+            HiddenPairs.run(pn);
         }
         return pn.getBoard();
     }
