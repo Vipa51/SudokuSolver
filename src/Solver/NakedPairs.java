@@ -25,21 +25,22 @@ public class NakedPairs {
 
     private static void findPairs(TileList tileList) {
         for(int i = 0; i < 9; i++) {
-            Tile tile1 = tileList.getTile(i);
-            if(tile1.getNumPossible() == 2) {
-                for(int n = i+1; n < 9; n++) {
-                    Tile tile2 = tileList.getTile(n);
-                    if(tile1.compare(tile2)) {
-                        elimPairs(tileList, tile1, tile2, i, n);
-                    }
+            Tile tile = tileList.getTile(i);
+            checkPair(tileList, tile, i);
+        }
+    }
+
+    private static void checkPair(TileList tileList, Tile tile, int i) {
+        if(tile.getNumPossible() == 2) {
+            for(int n = i+1; n < 9; n++) {
+                if(tile.compare(tileList.getTile(n))) {
+                    elimPairs(tileList, tile, i, n);
                 }
             }
         }
-
-
     }
 
-    private static void elimPairs(TileList tileList, Tile tile1, Tile tile2, int p1, int p2) {
+    private static void elimPairs(TileList tileList, Tile tile1, int p1, int p2) {
         // Find pair of numbers
         int num1 = -1;
         int num2 = -1;
