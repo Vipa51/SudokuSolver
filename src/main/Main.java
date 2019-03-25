@@ -5,7 +5,7 @@ import boards.Board;
 import pencilNotes.PencilNotes;
 
 public class Main {
-    private static final int BOARD_ID = 4;
+    private static final int BOARD_ID = 5;
 
     public static void main(String args[]) {
         Board board = new Board(BOARD_ID);
