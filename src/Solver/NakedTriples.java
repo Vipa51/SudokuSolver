@@ -26,6 +26,25 @@ public class NakedTriples {
         }
     }
 
+    /*
+    Pseudocode:
+
+    Tiles with naked triples always have only 2 or 3 numbers in them, there are always 3 tiles
+        -If tile has 2/3 numbers, add to a list of potential tiles (findTriples method)
+        -If >2 potential tiles then naked triple is a possibility (lines 51, 52)
+
+    potentials arraylist contains all tiles w/ 2 or 3 numbers only in them
+        -If 3 tiles contain 3 unique numbers total then that that is a naked triple (checkTriples)
+
+    eliminateTriples: eliminate those 3 unique numbers from all other tiles in the tileList except the naked triple tiles
+
+     */
+
+
+
+
+
+
     private static void findTriples(TileList tileList) {
         ArrayList<Integer> potentials = new ArrayList<>();
         for(int i=0; i<9; i++) {
