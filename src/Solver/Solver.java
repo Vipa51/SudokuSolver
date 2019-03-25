@@ -10,6 +10,7 @@ public class Solver {
             HiddenSingles.run(pn);
             NakedPairs.run(pn);
             HiddenPairs.run(pn);
+            NakedTriples.run(pn);
         }
         return pn.getBoard();
     }

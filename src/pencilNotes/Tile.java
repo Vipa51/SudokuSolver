@@ -1,5 +1,7 @@
 package pencilNotes;
 
+import java.util.ArrayList;
+
 public class Tile {
     private int i;
     private int j;
@@ -36,6 +38,16 @@ public class Tile {
             return true;
         }
         return false;
+    }
+
+    public ArrayList<Integer> getPossibleArray() {
+        ArrayList<Integer> possibleArray = new ArrayList<>();
+        for(int i=0; i<9; i++) {
+            if(possibleNums[i]) {
+                possibleArray.add(i+1);
+            }
+        }
+        return possibleArray;
     }
 
     public void crossOff(int number) {
